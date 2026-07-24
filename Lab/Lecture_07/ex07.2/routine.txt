@@ -1,0 +1,92 @@
+
+ex07.2:
+Passo 1: Output -> Cartella Equilibration
+    simulazione Molecular Dynamic con temperatura target 1.1:
+    SOLO per mostrare che la temperatura non rimane costante e che quindi
+    c'è bisogno di fare uno scan!
+
+    input.dat:
+
+    SIMULATION_TYPE        0
+    RESTART                0
+    TEMP                   1.1
+    NPART                  108
+    RHO                    0.8
+    R_CUT                  2.5
+    DELTA                  0.001
+    NBLOCKS                5000
+    NSTEPS                 1
+
+    ENDINPUT
+
+    properties.dat:
+    POTENTIAL_ENERGY
+    KINETIC_ENERGY
+    TEMPERATURE
+
+    ENDPROPERTIES
+
+Passo 2: Scan Temperatura input per simulazione Molecular Dynamic
+    bisogna capire che temperatura di input settare per ottenerne una target T*=1.
+
+    input.dat:
+
+    SIMULATION_TYPE        0
+    RESTART                0 
+    TEMP                   1.95 , ... , 2.05
+    NPART                  108
+    RHO                    0.8
+    R_CUT                  2.5
+    DELTA                  0.001
+    NBLOCKS                5000
+    NSTEPS                 1
+
+    ENDINPUT
+
+    properties.dat:
+    KINETIC_ENERGY
+    TEMPERATURE
+
+    ENDPROPERTIES
+
+Passo 3: Avendo individuato una TEMP migliore (T=1.97) come input per MD
+    posso creare le situazioni di equilibrio per fare i grafici. Dopo stessa identica cosa ma con NBLOCKS 500000
+    dove mi interessa solamente POTENTIAL_ENERGY
+
+    input.dat: 
+    SIMULATION_TYPE        0
+    RESTART                0 
+    TEMP                   1.97
+    NPART                  108
+    RHO                    0.8
+    R_CUT                  2.5
+    DELTA                  0.001
+    NBLOCKS                5000
+    NSTEPS                 1
+
+    ENDINPUT
+
+    properties.dat:
+    POTENTIAL_ENERGY
+    KINETIC_ENERGY
+    TEMPERATURE
+
+    ENDPROPERTIES
+
+    input.dat:
+    SIMULATION_TYPE        1
+    RESTART                0 
+    TEMP                   1.1
+    NPART                  108
+    RHO                    0.8
+    R_CUT                  2.5
+    DELTA                  0.1
+    NBLOCKS                5000
+    NSTEPS                 1
+
+    ENDINPUT
+
+    properties.dat:
+    POTENTIAL_ENERGY
+
+    ENDPROPERTIES

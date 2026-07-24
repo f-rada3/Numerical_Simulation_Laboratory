@@ -1,0 +1,34 @@
+
+Passo 1: Molecular Dynamics
+    input.dat:
+    SIMULATION_TYPE        0
+    RESTART                0
+    TEMP                   1.97
+    NPART                  108
+    RHO                    0.8
+    R_CUT                  2.5
+    DELTA                  0.001
+    NBLOCKS                100
+    NSTEPS                 5000
+
+    properties.dat:
+    POTENTIAL_ENERGY
+    PRESSURE
+    KINETIC_ENERGY
+    GOFR
+
+Passo 2: Monte Carlo
+    input.dat:
+    SIMULATION_TYPE        1
+    RESTART                0
+    TEMP                   1.1
+    NPART                  108
+    RHO                    0.8
+    R_CUT                  2.5
+    DELTA                  0.1
+    NBLOCKS                100
+    NSTEPS                 5000
+
+    properties.dat:
+    KINETIC_ENERGY
+    PRESSURE

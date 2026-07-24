@@ -1,0 +1,12 @@
+Best NN parameters for cubic fit
+--------------------------------
+hidden_layers: (32, 32)
+activation: relu
+optimizer: adam
+loss: mse
+epochs: 400
+batch_size: 16
+mse: 0.03157189117992384
+mae: 0.1421366402492108
+rmse: 0.1776848085231932
+r2: 0.9746458762163217

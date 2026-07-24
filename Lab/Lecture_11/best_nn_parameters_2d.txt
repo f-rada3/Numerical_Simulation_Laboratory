@@ -1,0 +1,12 @@
+Best NN parameters for 2D trigonometric fit
+-------------------------------------------
+hidden_layers: (64, 64)
+activation: relu
+optimizer: rmsprop
+loss: mse
+epochs: 400
+batch_size: 32
+mse: 0.00013011922291793272
+mae: 0.007864332040736277
+rmse: 0.011406981323642672
+r2: 0.9991017636929118
