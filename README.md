@@ -1,4 +1,4 @@
-#Numerical_Simulation_Laboratory
+# Numerical_Simulation_Laboratory
 
 Repository per la consegna degli esercitazi del Laboratorio di Simulazione Numerica tenuto dal professore Davide Emilio Galli all'Università degli Studi di Milano nell'Anno Accademico 2025/26.
 
