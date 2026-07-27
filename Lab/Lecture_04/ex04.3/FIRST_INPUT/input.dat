@@ -1,5 +1,5 @@
 SIMULATION_TYPE        0
-RESTART                1
+RESTART                0
 TEMP                   2.0
 NPART                  108
 RHO                    0.05
@@ -16,8 +16,7 @@ configurations:
     long: NBLOCKS= 250 , NSTEPS=200
 
 RESTART=0 -> forward (starting condition: low entropy, same as ex04.2)
-dopo la run direct bisogna salvare config.xyz e config-1.xyz come configurazioni 
-del nuovo input per la reverse
+salvataggio di configurazioni di output config.xyz e conf-1.xyz nelle configurazioni di input per il successivo
 RESTART=1 -> reverse (starting from final condition of previous run)
 
 

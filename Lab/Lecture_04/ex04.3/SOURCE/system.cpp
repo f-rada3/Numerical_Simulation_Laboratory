@@ -219,7 +219,7 @@ void System :: initialize(){ // Initialize the System object according to the co
   return;
 }
 
-// modificato in eserecizio 4.4
+// modificato in eserecizio 4.3
 void System :: initialize_velocities(){
   double xold, yold, zold;
 
@@ -405,11 +405,9 @@ void System :: initialize_properties(){ // Initialize data members used for meas
         ofstream coutpv("../OUTPUT/pofv.dat");
         coutpv << setw(12) << "BLOCK" << setw(12) << "VELOCITY" << setw(12) << "ACTUAL_POFV" << setw(12) << "AVE_POFV" << setw(12) << "ERROR" << endl;
         coutpv.close();
-        input>>_n_bins_v;               // dal file properties.dat legge il numero di bin da utilizzare (30)
-        _nprop += _n_bins_v;            //vengono misurati N_bin valori  (non va bene n_prop++: non solo 1 valore... tanti bin)
-        _bin_size_v = 4.0*sqrt(_temp)/(double)_n_bins_v; // metto sqrt(T) usando teo dell equipartizione dell'en. (il 4 è un fattore che serve a far 
-                                                           //stare tutti i valori di v all'interno del range di velocità che ho deciso di considerare,
-                                                           // cioè 4 volte la velocità media)
+        input>>_n_bins_v;               
+        _nprop += _n_bins_v;            
+        _bin_size_v = 4.0*sqrt(_temp)/(double)_n_bins_v; // teo equipartizione dell'energia (4 => fa stare tutti i valori di v all'interno del range di 4 volte la velocità media)
         _measure_pofv = true;
         _index_pofv = index_property;   // Salva la posizione iniziale, dentro il vettore   (INDEX POFV DICE: Il primo bin della distribuzione parte da questa posizione)
                                         // delle proprietà, in cui cominceranno i bin
